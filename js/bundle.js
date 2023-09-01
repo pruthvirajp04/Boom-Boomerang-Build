@@ -6730,13 +6730,13 @@ var AdvertisementView = /** @class */ (function (_super) {
      * @memberof AdvertisementView
      */
     AdvertisementView.prototype.OpenLoopView = function () {
-        this._loopADZone.visible = true;
+        this._loopADZone.visible = false;
     };
     AdvertisementView.prototype.OpenBanner = function () {
         console.log("Open Banner");
-        this._bannerADZone.active = true;
-        this._bannerADZone.visible = true;
-        this._bannerADZone.onEnable();
+        this._bannerADZone.active = false;
+        this._bannerADZone.visible = false;
+        // this._bannerADZone.onEnable();
     };
     AdvertisementView.prototype.CloseBanner = function ( /* res */) {
         console.log("Close Banner");
@@ -6748,7 +6748,7 @@ var AdvertisementView = /** @class */ (function (_super) {
     AdvertisementView.prototype.OpenSiderAd = function () {
         console.log("Open SiderAd");
         // if (!AdvertisementView._showBothAd || res) {
-        this._siderAdZone.visible = true;
+        this._siderAdZone.visible = false;
     };
     AdvertisementView.prototype.CloseSiderAd = function () {
         console.log("Close SiderAd");
@@ -7030,7 +7030,7 @@ var GameOver = /** @class */ (function (_super) {
         this._diamonds_Box = this.owner.getChildByName("Diamonds_Box");
         this._diamondsCount_Text = this._diamonds_Box.getChildByName("DiamondsCount_Text");
         this._diamondsCount_Text.text = GameMgr_1.default.getInstance().CurrentDiamond.toString();
-        EventMgr_1.default.instance.dispatch(EventDef_1.EventDef.AD_CloseSideView);
+        // EventMgr_1.default.instance.dispatch(EventDef_1.EventDef.AD_CloseSideView);
     };
     GameOver.prototype.addEvent = function () {
         this._doubleDa_Btn.on(Laya.Event.CLICK, this, this.DoubleDa);
