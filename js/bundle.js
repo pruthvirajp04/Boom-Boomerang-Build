@@ -6424,10 +6424,10 @@ var MyPopAdView = /** @class */ (function (_super) {
         this._popOut.visible = true;
     };
     MyPopAdView.prototype.onEnable = function () {
-        this._popBtn.on(Laya.Event.CLICK, this, this.onPopBtnClick);
-        EventMgr_1.default.instance.regEvemt(EventDef_1.EventDef.AD_OnShareAdFail, this, this.onShareAdFail);
-        EventMgr_1.default.instance.regEvemt(EventDef_1.EventDef.AD_OpenSideView, this, this.SinglePopUp);
-        EventMgr_1.default.instance.regEvemt(EventDef_1.EventDef.AD_CloseSideView, this, this.SingelPopDown);
+        this._popBtn.off(Laya.Event.CLICK, this, this.onPopBtnClick);
+        EventMgr_1.default.instance.removeEvent(EventDef_1.EventDef.AD_OnShareAdFail, this, this.onShareAdFail);
+        EventMgr_1.default.instance.removeEvent(EventDef_1.EventDef.AD_OpenSideView, this, this.SinglePopUp);
+        EventMgr_1.default.instance.removeEvent(EventDef_1.EventDef.AD_CloseSideView, this, this.SingelPopDown);
     };
     MyPopAdView.prototype.onDisable = function () {
         this._popBtn.off(Laya.Event.CLICK, this, this.onPopBtnClick);
