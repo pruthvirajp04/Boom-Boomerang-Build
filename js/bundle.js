@@ -6914,6 +6914,7 @@ var GameMain = /** @class */ (function (_super) {
         this._skin_Img.loadImage("Skin/" + index + ".png");
     };
     GameMain.prototype.startBtnClick = function () {
+        // alert("df")
         var _this = this;
         if (WudianMgr_1.default.FirstWudianFlag /* && AppSwitchConfig.getInstance().getAppSwitchData().version == AppConfig.Versions */) {
             var data = {};
@@ -7035,6 +7036,7 @@ var GameOver = /** @class */ (function (_super) {
     GameOver.prototype.addEvent = function () {
         this._doubleDa_Btn.on(Laya.Event.CLICK, this, this.DoubleDa);
         this._returnMain_Btn.on(Laya.Event.CLICK, this, this.ReturnMain);
+      
         this._continueGame_Btn.on(Laya.Event.CLICK, this, this.ContinueGame);
         EventMgr_1.default.instance.regEvemt(EventDef_1.EventDef.Game_OnUserMoneyChange, this, this.diamondsChange);
     };
@@ -7102,13 +7104,14 @@ var GameOver = /** @class */ (function (_super) {
         }, null);
     };
     GameOver.prototype.ReturnMain = function () {
+        // alert("df")
         var data = {};
         data.onCloseEvent = function () {
             ViewMgr_1.default.instance.openView(ViewMgr_1.ViewDef.GameMain);
             EventMgr_1.default.instance.dispatch(EventDef_1.EventDef.AD_CloseBanner);
             EventMgr_1.default.instance.dispatch(EventDef_1.EventDef.AD_OpenBottomLoopView);
         };
-        ViewMgr_1.default.instance.openView(ViewMgr_1.ViewDef.MoreGame, data);
+        ViewMgr_1.default.instance.openView(ViewMgr_1.ViewDef.GameMain);
         this.closeView();
     };
     GameOver.prototype.ContinueGame = function () {
@@ -7378,9 +7381,11 @@ var MoreGame = /** @class */ (function (_super) {
         return _super.call(this) || this;
     }
     MoreGame.prototype.onAwake = function () {
+        alert("df")
         this._return_Btn = this.owner.getChildByName("Return_Btn");
     };
     MoreGame.prototype.addEvent = function () {
+      
         this._return_Btn.on(Laya.Event.CLICK, this, this.closeView);
     };
     MoreGame.prototype.removeEvent = function () {
