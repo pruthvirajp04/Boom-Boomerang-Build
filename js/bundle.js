@@ -2824,16 +2824,7 @@ var ShareAd = /** @class */ (function () {
     };
     ShareAd.reportUserClick = function (advid) {
         return;
-        ShareAd.reqUserClick(advid, function (res) {
-            if (1 == res.code) {
-                console.log("点击广告上报成功");
-            }
-            else {
-                console.log("点击广告上报失败");
-            }
-        }, function (res) {
-            console.log("点击广告上报失败");
-        });
+    
     };
     ShareAd.getRandomADPosID = function () {
         return this.AdLocationids[Math.floor(Math.random() * this.AdLocationids.length)];
@@ -3796,7 +3787,6 @@ var SingleRdMoveAdView = /** @class */ (function (_super) {
                 self._data = data;
             }
             else {
-                _this.owner.visible = false;
             }
         });
     };
