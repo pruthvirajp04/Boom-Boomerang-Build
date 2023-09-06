@@ -7061,6 +7061,7 @@ var GameOver = /** @class */ (function (_super) {
         EventMgr_1.default.instance.dispatch(EventDef_1.EventDef.AD_OpenSideView);
     };
     GameOver.prototype.InduceClick = function () {
+        
         this._returnMain_Btn.mouseEnabled = false;
         this._continueGame_Btn.mouseEnabled = false;
         var time = AppSwitchConfig_1.default.getInstance().getAppSwitchData().bannerMoveTimer * 1000;
@@ -7146,6 +7147,7 @@ var GamePlaying = /** @class */ (function (_super) {
         return _this;
     }
     GamePlaying.prototype.onAwake = function () {
+        
         this._returnMain_Btn = this.owner.getChildByName("ReturnMain_Btn");
         this._level_Text = this.owner.getChildByName("Level_Box").getChildByName("Level_Text");
         this._level_Text.text = "LEVEL:" + GameMgr_1.default.getInstance().CurrentLevel;
@@ -7161,6 +7163,8 @@ var GamePlaying = /** @class */ (function (_super) {
         EventMgr_1.default.instance.regEvemt(EventDef_1.EventDef.Game_OnUserMoneyChange, this, this.diamondsChange);
     };
     GamePlaying.prototype.removeEvent = function () {
+        // alert()
+
         this._returnMain_Btn.off(Laya.Event.CLICK, this, this.openGameMainView);
         this._invincible_Btn.off(Laya.Event.CLICK, this, this.nextLevel);
         EventMgr_1.default.instance.removeEvent(EventDef_1.EventDef.Game_OnLevelComplate, this, this.GameOver);
