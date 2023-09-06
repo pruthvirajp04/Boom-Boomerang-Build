@@ -3126,7 +3126,6 @@ var BannerAdView = /** @class */ (function (_super) {
                 var data = datas[Math.floor(Math.random() * datas.length)];
                 self._displaySp.loadImage(data.logo, Laya.Handler.create(self, function () {
                     if (!self._displaySp.destroyed) {
-                        self._displaySp.visible = true;
                         self._displaySp.width = 750;
                         self._displaySp.height = 256;
                     }
@@ -3424,7 +3423,6 @@ var LoopAdView = /** @class */ (function (_super) {
         ShareAd_1.default.getADVs(this.AdPosID, function (datas) {
             if (self.owner && !_this.owner.destroyed) {
                 if (datas && datas.length > 0 && datas.length < 50) {
-                    _this.owner.visible = true;
                     var temp = [];
                     var counter = 0;
                     for (var i = 0; i < 50; ++i) {
@@ -3448,7 +3446,6 @@ var LoopAdView = /** @class */ (function (_super) {
                 }
                 else {
                     _this._list.array = datas;
-                    _this.owner.visible = false;
                 }
             }
         });
@@ -3530,7 +3527,6 @@ var SingleAdView = /** @class */ (function (_super) {
         ShareAd_1.default.getADVs(this.AdPosID, function (datas) {
             if (self.owner && !self.owner.destroyed) {
                 if (datas && datas.length > 0) {
-                    self.owner.visible = true;
                     var data = datas[Math.floor(Math.random() * datas.length)];
                     self._displaySp.loadImage(data.logo, Laya.Handler.create(self, function () {
                         if (!self._displaySp.destroyed) {
@@ -3547,7 +3543,6 @@ var SingleAdView = /** @class */ (function (_super) {
                     self._data = data;
                 }
                 else {
-                    _this.owner.visible = false;
                 }
             }
         });
@@ -3655,7 +3650,6 @@ var SingleAniADView = /** @class */ (function (_super) {
         var self = this;
         ShareAd_1.default.getADVs(this.AdPosID, function (datas) {
             if (datas && datas.length > 0) {
-                self._ownerSprite.visible = true;
                 var data = datas[Math.floor(Math.random() * datas.length)];
                 self._animation.loadAtlas(data.atlas, Laya.Handler.create(self, function () {
                     self._animation.play(0, true);
@@ -3663,7 +3657,6 @@ var SingleAniADView = /** @class */ (function (_super) {
                 self._data = data;
             }
             else {
-                self._ownerSprite.visible = false;
             }
         }, false);
     };
@@ -3779,7 +3772,6 @@ var SingleRdMoveAdView = /** @class */ (function (_super) {
         var self = this;
         ShareAd_1.default.getADVs(this.AdPosID, function (datas) {
             if (datas && datas.length > 0) {
-                self.owner.visible = true;
                 var data = datas[Math.floor(Math.random() * datas.length)];
                 self._displaySp.loadImage(data.logo, Laya.Handler.create(self, function () {
                     if (!self._displaySp.destroyed) {
@@ -3796,7 +3788,6 @@ var SingleRdMoveAdView = /** @class */ (function (_super) {
                 self._data = data;
             }
             else {
-                _this.owner.visible = false;
             }
         });
     };
@@ -4409,7 +4400,6 @@ var ClickGetPrize = /** @class */ (function (_super) {
         this._getPrize_View = this.owner.getChildByName("GetPrize_View");
         this._prizeCount_Text = this._getPrize_View.getChildByName("PrizeCount_Text");
         this._confirm_Btn = this._getPrize_View.getChildByName("Confirm_Btn");
-        this._getPrize_View.visible = false;
         this._clickTime_PBar = this._bg.getChildByName("ClickTime_PBar");
         this._clickTime_PBar$Bar = this._clickTime_PBar.getChildByName("ClickTime_PBar$Bar");
         this._clickBarOriginalWidth = this._clickTime_PBar$Bar.width;
@@ -4471,10 +4461,8 @@ var ClickGetPrize = /** @class */ (function (_super) {
      * @memberof ClickGetPrize
      */
     ClickGetPrize.prototype.OpenPrizeWindow = function () {
-        this._bg.visible = false;
         var self = this;
         this._prizeCount_Text.text = this._prizeCount.toString();
-        this._getPrize_View.visible = true;
         /* 确认按钮 */
         this._confirm_Btn.once(Laya.Event.CLICK, this, this.closeView);
     };
@@ -4539,10 +4527,7 @@ var ClickGetPrize = /** @class */ (function (_super) {
         this._bannerClicked = true;
         this._clickTime = this._needClickTime;
         this._clickTime_PBar$Bar.width = this._clickBarOriginalWidth;
-        this._click_Btn.visible = false;
-        this._open_Btn.visible = true;
-        // this._bannerAd_View.visible = false;
-        // this._bannerAd_View.active = false;
+   
         this.OpenPrizeWindow();
     };
     ClickGetPrize.prototype.onClose = function () {
@@ -4578,20 +4563,16 @@ var UniversalBottomZone = /** @class */ (function (_super) {
         if (aspectRatio < 0.5) {
             this._autoZone.bottom = this._loopADZone.height + this._bannerADZone.height;
             this._loopADZone.bottom = this._bannerADZone.height;
-            this._bannerADZone.visible = true;
         }
         else {
             this._autoZone.bottom = this._loopADZone.height;
             this._loopADZone.bottom = 0;
-            this._bannerADZone.visible = false;
         }
     };
     UniversalBottomZone.prototype.onDisable = function () {
     };
     UniversalBottomZone.prototype.onUpdate = function () {
-        if (!this._bannerADZone.visible) {
-            // this._bannerAd.clearWXBaner();
-        }
+       
     };
     return UniversalBottomZone;
 }(Laya.Script));
@@ -4782,11 +4763,9 @@ var ViewBase = /** @class */ (function (_super) {
         ViewMgr_1.default.instance.closeView(this._viewDef);
     };
     ViewBase.prototype.hide = function () {
-        this.owner.visible = false;
         this.onHide();
     };
     ViewBase.prototype.show = function () {
-        this.owner.visible = true;
         this.onShow();
     };
     ViewBase.prototype.viewIsHide = function () {
@@ -6224,7 +6203,6 @@ var TouchPad = /** @class */ (function (_super) {
     TouchPad.prototype.DisableInput = function () {
         this._isMouseDown = false;
         this.enabled = false;
-        this._touchPos.visible = false;
     };
     TouchPad.prototype.EnableInput = function () {
         this.enabled = true;
@@ -6239,7 +6217,6 @@ var TouchPad = /** @class */ (function (_super) {
             return;
         this._touchPos.height = this._touchPosheight;
         this._isMouseDown = false;
-        this._touchPos.visible = false;
         if (this._canThrow) {
             PlayerController_1.default.Instance.ThrowBoomerang();
         }
@@ -6317,9 +6294,7 @@ var TouchPad = /** @class */ (function (_super) {
             this._canThrow = false;
             return;
         }
-        if (!this._touchPos.visible && PlayerController_1.default.Instance.CanThrowBoomerang) {
-            this._touchPos.visible = true;
-        }
+    
         if (this._isMouseDown) {
             this._canThrow = false;
             var currentpos = new Laya.Vector2(Laya.stage.mouseX, Laya.stage.mouseY);
@@ -6388,12 +6363,8 @@ var HideAdvVideoIco = /** @class */ (function (_super) {
     }
     HideAdvVideoIco.prototype.onEnable = function () {
         if (AppSwitchConfig_1.default.getInstance().getAppSwitchData().shipintubiao == 1) {
-            this._videoIco.visible = true;
-            this._noIco.visible = false;
         }
         else {
-            this._videoIco.visible = false;
-            this._noIco.visible = true;
         }
     };
     HideAdvVideoIco.prototype.onAwake = function () {
@@ -6420,8 +6391,6 @@ var MyPopAdView = /** @class */ (function (_super) {
         this._popOut = this._popBtn.getChildByName("PopOut");
         this._popIn = this._popBtn.getChildByName("PopIn");
         this._loopAd = this._bg.getChildByName("LoopAD").getComponent(LoopAdView_1.default);
-        this._popIn.visible = false;
-        this._popOut.visible = true;
     };
     MyPopAdView.prototype.onEnable = function () {
         this._popBtn.off(Laya.Event.CLICK, this, this.onPopBtnClick);
@@ -6447,24 +6416,18 @@ var MyPopAdView = /** @class */ (function (_super) {
         var _this = this;
         Laya.Tween.to(this._bg, { x: 520 }, 250, Laya.Ease.circIn, Laya.Handler.create(this, function () {
             _this._loopAd.enabled = true;
-            _this._popOut.visible = false;
-            _this._popIn.visible = true;
         }), null, true);
     };
     MyPopAdView.prototype.SingelPopDown = function () {
         var _this = this;
         Laya.Tween.to(this._bg, { x: 0 }, 250, Laya.Ease.circIn, Laya.Handler.create(this, function () {
             _this._loopAd.enabled = false;
-            _this._popOut.visible = true;
-            _this._popIn.visible = false;
         }), null, true);
     };
     MyPopAdView.prototype.popDown = function () {
         var _this = this;
         Laya.Tween.to(this._bg, { x: 0 }, 250, Laya.Ease.circIn, Laya.Handler.create(this, function () {
             _this._loopAd.enabled = false;
-            _this._popOut.visible = true;
-            _this._popIn.visible = false;
             EventMgr_1.default.instance.dispatch(EventDef_1.EventDef.AD_CloseBanner);
             EventMgr_1.default.instance.dispatch(EventDef_1.EventDef.AD_OpenBottomLoopView);
             console.log("EventDef.AD_CloseSideView");
@@ -6475,8 +6438,6 @@ var MyPopAdView = /** @class */ (function (_super) {
         this._loopAd.onEnable();
         Laya.Tween.to(this._bg, { x: 510 }, 250, Laya.Ease.circIn, Laya.Handler.create(this, function () {
             _this._loopAd.enabled = true;
-            _this._popOut.visible = false;
-            _this._popIn.visible = true;
             EventMgr_1.default.instance.dispatch(EventDef_1.EventDef.AD_OpenBanner);
             EventMgr_1.default.instance.dispatch(EventDef_1.EventDef.AD_CloseBottomLoopView);
         }), null, true);
@@ -6666,29 +6627,8 @@ var AdvertisementView = /** @class */ (function (_super) {
         this._bannerADZone = this.owner.getChildByName("BannerAD");
         this._siderAdZone = this.owner.getChildByName("SideAD");
         if (!ShareAd_1.default.isNeedShowAd()) {
-            this._ownerSp.visible = false;
-            // this._bottomZone.visible = false;
-            this._loopADZone.visible = false;
-            this._bannerADZone.visible = false;
-            this._siderAdZone.visible = false;
         }
-        else {
-            /* 下面注册的事件,用于控制LoopAd和BannerAd的开关
-                在所有广告都关闭的开关为打开的情况下，不能注册这些事件否则广告会被打开 */
-            // var aspectRatio = Laya.stage.width / Laya.stage.height;
-            // if (aspectRatio < 0.5) {
-            //     this._loopADZone.bottom = this._bannerADZone.height;
-            //     this._bannerADZone.visible = true;
-            //     this._bannerADZone.active = true;
-            //     AdvertisementView._showBothAd = true;
-            // }
-            // else {
-            //     this._loopADZone.bottom = 0;
-            //     this._bannerADZone.visible = false;
-            //     this._bannerADZone.active = false;
-            //     AdvertisementView._showBothAd = false;
-            // }
-        }
+   
     };
     AdvertisementView.prototype.addEvent = function () {
         EventMgr_1.default.instance.regEvemt(EventDef_1.EventDef.AD_CloseBottomLoopView, this, this.CloseLoopView);
@@ -6719,10 +6659,7 @@ var AdvertisementView = /** @class */ (function (_super) {
      * @memberof AdvertisementView
      */
     AdvertisementView.prototype.CloseLoopView = function () {
-        // this._loopADZone.onEnable();
-        /* if (!AdvertisementView._showBothAd) */ {
-            this._loopADZone.visible = false;
-        }
+    
     };
     /**
      * 打开LoopAd
@@ -6730,30 +6667,25 @@ var AdvertisementView = /** @class */ (function (_super) {
      * @memberof AdvertisementView
      */
     AdvertisementView.prototype.OpenLoopView = function () {
-        this._loopADZone.visible = false;
     };
     AdvertisementView.prototype.OpenBanner = function () {
         console.log("Open Banner");
         this._bannerADZone.active = false;
-        this._bannerADZone.visible = false;
         // this._bannerADZone.onEnable();
     };
     AdvertisementView.prototype.CloseBanner = function ( /* res */) {
         console.log("Close Banner");
         // if (!AdvertisementView._showBothAd || res) {
         this._bannerADZone.active = false;
-        this._bannerADZone.visible = false;
         // }
     };
     AdvertisementView.prototype.OpenSiderAd = function () {
         console.log("Open SiderAd");
         // if (!AdvertisementView._showBothAd || res) {
-        this._siderAdZone.visible = false;
     };
     AdvertisementView.prototype.CloseSiderAd = function () {
         console.log("Close SiderAd");
         // if (!AdvertisementView._showBothAd || res) {
-        this._siderAdZone.visible = false;
     };
     return AdvertisementView;
 }(ViewBase_1.default));
@@ -6781,13 +6713,11 @@ var FriendInviteView = /** @class */ (function (_super) {
         this._close_Btn = this._bg.getChildByName("Close_Btn");
         this._head_Img = this._bg.getChildByName("Head_Img");
         this._gameName = this._bg.getChildByName("GameName_Text");
-        this._bg.visible = false;
     };
     FriendInviteView.prototype.onShow = function () {
         var _this = this;
         var rd = Math.floor(Math.random() * 75) + 1;
         this._head_Img.loadImage(this._headUrl + rd + ".jpg", Laya.Handler.create(this, function () {
-            _this._bg.visible = true;
         }));
         ShareAd_1.default.getADVs(this._adNumber, function (datas) {
             if (datas && datas.length > 0) {
@@ -6797,7 +6727,6 @@ var FriendInviteView = /** @class */ (function (_super) {
             }
         }, false);
         Laya.timer.once(1000, this, function () {
-            _this._bg.visible = true;
         });
     };
     FriendInviteView.prototype.addEvent = function () {
@@ -6864,7 +6793,6 @@ var GameMain = /** @class */ (function (_super) {
         this._diamondsCount_Text.text = GameMgr_1.default.getInstance().CurrentDiamond.toString();
         this.GetNextSkin();
         if (!ShareAd_1.default.isNeedShowAd()) {
-            this._moreGame_Btn.visible = false;
         }
     };
     GameMain.prototype.addEvent = function () {
@@ -7099,7 +7027,6 @@ var GameOver = /** @class */ (function (_super) {
         WXAPI_1.default.showRewardedVideoAd(function (res) {
             if (res) {
                 GameMgr_1.default.getInstance().CurrentDiamond += 5;
-                _this._doubleDa_Btn.visible = false;
             }
         }, null);
     };
@@ -7287,9 +7214,7 @@ var GetUnlockSkin = /** @class */ (function (_super) {
         this._receive_Btn = this._bg.getChildByName("Receive_Btn");
         this._slotItem = this._bg.getChildByName("Slot").getChildByName("SlotItem");
         this._unlockSuccess_Img = this._bg.getChildByName("UnlockSuccess_Img");
-        this._unlockSuccess_Img.visible = false;
         this._confirm_Btn = this._bg.getChildByName("Confirm_Btn");
-        this._confirm_Btn.visible = false;
     };
     GetUnlockSkin.prototype.addEvent = function () {
         this._close_Btn.on(Laya.Event.CLICK, this, this.Close);
@@ -7344,8 +7269,7 @@ var GetUnlockSkin = /** @class */ (function (_super) {
                 if (self._skinIndex != 99) {
                     SkinMgr_1.default.Instance.UnLockSkin(self._skinIndex);
                     SkinMgr_1.default.Instance.SetCurrentSkin(self._skinIndex);
-                    self._unlockSuccess_Img.visible = true;
-                    self._confirm_Btn.visible = true;
+                
                 }
             }
         }, null);
@@ -7353,7 +7277,6 @@ var GetUnlockSkin = /** @class */ (function (_super) {
     GetUnlockSkin.prototype.UnlockSuccess = function () {
         EventMgr_1.default.instance.dispatch(EventDef_1.EventDef.Skin_UnlockSuccess);
         GameMgr_1.default.getInstance().LoadCurrentScene();
-        this._confirm_Btn.visible = false;
         this.DelayClose();
     };
     GetUnlockSkin.prototype.DelayClose = function () {
@@ -7514,24 +7437,13 @@ var PrizeDraw = /** @class */ (function (_super) {
      */
     PrizeDraw.prototype.ShowDrawResult = function () {
         this._isDrawing = false;
-        this._button_Box.visible = true;
-        this._start_Btn.visible = false;
         if (this._drawTimes > 0) {
-            this._receive_Btn.visible = true;
-            this._share_Btn.visible = false;
-            this._receiveTimes_Text.visible = true;
             this._receiveTimes_Text.text = "免费次数" + this._drawTimes + "/3";
         }
         else if (this._exDrawTimes > 0) {
-            this._receive_Btn.visible = true;
-            this._share_Btn.visible = false;
-            this._receiveTimes_Text.visible = true;
             this._receiveTimes_Text.text = "额外次数" + this._exDrawTimes + "/3";
         }
         else {
-            this._receive_Btn.visible = false;
-            this._share_Btn.visible = true;
-            this._receiveTimes_Text.visible = true;
             this._receiveTimes_Text.text = "领取次数用完，分享后可重新获得";
         }
     };
@@ -7554,26 +7466,16 @@ var PrizeDraw = /** @class */ (function (_super) {
      * @memberof PrizeDraw
      */
     PrizeDraw.prototype.ResetDraw = function () {
-        this._button_Box.visible = true;
-        this._getPrize_View.visible = false;
         this._prizeWheel.rotation = 0;
         this._prizeCount = 0;
         this._isDrawing = false;
-        this._receive_Btn.visible = false;
-        this._receiveTimes_Text.visible = false;
-        this._start_Btn.visible = true;
         this._start_Btn.active = true;
-        this._share_Btn.visible = false;
         this._startPoint_Btn.on(Laya.Event.CLICK, this, this.StartPrizeDraw);
     };
     PrizeDraw.prototype.ShowPrizeCount = function (res) {
         if (res) {
-            this._receive_Btn.visible = false;
-            this._receiveTimes_Text.visible = false;
             this._prizeCount_Text.text = this._prizeCount.toString();
-            this._getPrize_View.visible = true;
             GameMgr_1.default.getInstance().CurrentDiamond += this._prizeCount;
-            this._button_Box.visible = false;
             if (this._drawTimes > 0) {
                 this._drawTimes--;
             }
@@ -7654,10 +7556,7 @@ var SignInView = /** @class */ (function (_super) {
         this._rewardDescript_Text = this._reward_View.getChildByName("RewardDescript_Text");
         this._rewardConfrim_Btn = this._reward_View.getChildByName("Confirm_Btn");
         this._rewardConfrim_Btn.on(Laya.Event.CLICK, this, function () {
-            _this._bg.visible = true;
-            _this._reward_View.visible = false;
         });
-        this._reward_View.visible = false;
     };
     SignInView.prototype.openView = function (data) {
         var _this = this;
@@ -7671,26 +7570,15 @@ var SignInView = /** @class */ (function (_super) {
         for (var i = 0; i < this._signData.SignInDays.length; i++) {
             this._daylist[i].getChildByName("Count_Text").text = this._signReward[i].toString();
             if (i < SignInMgr_1.default.Instance.DayInPeriod) {
-                this._daylist[i].getChildByName("Mask").visible = true;
                 if (this._signData.SignInDays[i]) {
-                    this._daylist[i].getChildByName("SignIn").visible = true;
-                    this._daylist[i].getChildByName("UnSignIn").visible = false;
                 }
                 else {
-                    this._daylist[i].getChildByName("SignIn").visible = false;
-                    this._daylist[i].getChildByName("UnSignIn").visible = true;
                 }
             }
             else if (i == SignInMgr_1.default.Instance.DayInPeriod) {
                 if (this._signData.SignInDays[i]) {
-                    this._daylist[i].getChildByName("Mask").visible = true;
-                    this._daylist[i].getChildByName("SignIn").visible = true;
-                    this._daylist[i].getChildByName("UnSignIn").visible = false;
                 }
                 else {
-                    this._daylist[i].getChildByName("Mask").visible = false;
-                    this._daylist[i].getChildByName("SignIn").visible = false;
-                    this._daylist[i].getChildByName("UnSignIn").visible = true;
                     this._today = this._daylist[i];
                     this._today.on(Laya.Event.CLICK, this, this.daySlotClicked, [i, this._signReward[i].toString()]);
                     var tw = this._daylist[i].getChildByName("UnSignIn").addComponent(TwinkleSprite_1.default);
@@ -7699,18 +7587,8 @@ var SignInView = /** @class */ (function (_super) {
                 }
             }
             else {
-                this._daylist[i].getChildByName("Mask").visible = false;
-                this._daylist[i].getChildByName("SignIn").visible = false;
-                this._daylist[i].getChildByName("UnSignIn").visible = false;
             }
-            // }
-            // else {
-            //     (this._daylist[i].getChildByName("Mask") as Laya.Sprite).visible = false;
-            // }
-            // if (i == SignMgr.Instance.DayInPeriod) {
-            //     let tw = this._daylist[i].getChildByName("UnSignIn").addComponent(TwinkleSprite) as TwinkleSprite;
-            //     tw.TwinkleSpeed = 4000;
-            // }
+            
         }
         _super.prototype.openView.call(this, data);
     };
@@ -7739,9 +7617,6 @@ var SignInView = /** @class */ (function (_super) {
         console.log("签到完毕");
         SignInMgr_1.default.Instance.SignIn();
         this._today.off(Laya.Event.CLICK, this, this.daySlotClicked);
-        this._today.getChildByName("Mask").visible = true;
-        this._today.getChildByName("SignIn").visible = true;
-        this._today.getChildByName("UnSignIn").visible = false;
     };
     SignInView.prototype.showRewardView = function (text) {
         var str = "";
@@ -7749,8 +7624,6 @@ var SignInView = /** @class */ (function (_super) {
             str = text;
         }
         this._rewardDescript_Text.text = str;
-        this._reward_View.visible = true;
-        this._bg.visible = false;
     };
     return SignInView;
 }(ViewBase_1.default));
@@ -7846,7 +7719,6 @@ var UnlockSkinView = /** @class */ (function (_super) {
         this._list.array = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     };
     UnlockSkinView.prototype.onShow = function () {
-        this._ownerBox.visible = true;
         this._ownerBox.active = true;
         this._enabled = true;
         EventMgr_1.default.instance.dispatch(EventDef_1.EventDef.AD_OpenBanner);
@@ -7858,7 +7730,6 @@ var UnlockSkinView = /** @class */ (function (_super) {
     // Show() {
     // }
     UnlockSkinView.prototype.Hide = function () {
-        this._ownerBox.visible = false;
         this._ownerBox.active = false;
         this._enabled = false;
     };
@@ -7872,10 +7743,8 @@ var UnlockSkinView = /** @class */ (function (_super) {
             var using = this._itemArray[i].getChildByName("Using");
             var locked = this._itemArray[i].getChildByName("Locked");
             if (SkinMgr_1.default.Instance.GetSkinAvailable(i)) {
-                locked.visible = false;
             }
             if (SkinMgr_1.default.Instance.GetCurrentSkin() == i) {
-                using.visible = true;
             }
         }
     };
@@ -7887,11 +7756,6 @@ var UnlockSkinView = /** @class */ (function (_super) {
     UnlockSkinView.prototype.SetUnlockMethod = function (index) {
         var unlockByVidelo = SkinMgr_1.default.Instance.CurrentSkinDate.UnlockByVidelo;
         if (SkinMgr_1.default.Instance.GetSkinAvailable(index)) {
-            this._unlockByDia_Btn.visible = false;
-            this._useSkin_Btn.visible = true;
-            this._unlockByVideo_Btn.visible = false;
-            this._unlockByVideo_View.visible = false;
-            this._selectSkin_Text.visible = false;
             var lab = this._useSkin_Btn.getChildByName("lab");
             if (SkinMgr_1.default.Instance.GetCurrentSkin() == index) {
                 lab.text = "取消使用";
@@ -7902,38 +7766,16 @@ var UnlockSkinView = /** @class */ (function (_super) {
         }
         else if (unlockByVidelo) {
             if (index != -1 && index >= 0 && index <= 8) {
-                this._unlockByDia_Btn.visible = false;
-                this._useSkin_Btn.visible = false;
-                this._unlockByVideo_Btn.visible = true;
-                this._unlockByVideo_View.visible = false;
-                this._selectSkin_Text.visible = false;
             }
             else {
-                this._unlockByDia_Btn.visible = false;
-                this._unlockByVideo_View.visible = false;
-                this._unlockByVideo_Btn.visible = false;
-                this._useSkin_Btn.visible = false;
-                this._selectSkin_Text.visible = true;
             }
         }
         else {
-            this._unlockByDia_Btn.visible = true;
-            this._unlockByVideo_Btn.visible = false;
-            this._useSkin_Btn.visible = false;
             if (index != -1 && index >= 0 && index <= 8) {
-                this._useSkin_Btn.visible = false;
-                this._selectSkin_Text.visible = false;
                 var skincost = SkinMgr_1.default.Instance.GetSkinUnlockCost(index);
                 this._unlockByDia_DiaCount_Text.text = SkinMgr_1.default.Instance.GetSkinUnlockCost(index).toString();
-                this._unlockByDia_Btn.visible = true;
-                this._unlockByVideo_View.visible = false;
             }
             else {
-                this._unlockByDia_Btn.visible = false;
-                this._unlockByVideo_Btn.visible = false;
-                this._unlockByVideo_View.visible = false;
-                this._useSkin_Btn.visible = false;
-                this._selectSkin_Text.visible = true;
                 this._selectSkin_Text.text = "点击图标选择您想要的皮肤";
             }
         }
@@ -7954,14 +7796,10 @@ var UnlockSkinView = /** @class */ (function (_super) {
         var using = this._itemArray[index].getChildByName("Using");
         var locked = this._itemArray[index].getChildByName("Locked");
         if (SkinMgr_1.default.Instance.GetSkinAvailable(index)) {
-            locked.visible = false;
             if (SkinMgr_1.default.Instance.GetCurrentSkin() == index) {
-                using.visible = true;
             }
         }
         else {
-            locked.visible = true;
-            using.visible = false;
         }
         // this.Hide();
     };
@@ -7978,19 +7816,13 @@ var UnlockSkinView = /** @class */ (function (_super) {
             var normal = this._itemArray[i].getChildByName("Normal");
             if (i == index) {
                 if (this._lastSelect == index) {
-                    selected.visible = false;
-                    normal.visible = true;
                     this._lastSelect = -1;
                 }
                 else {
-                    selected.visible = true;
-                    normal.visible = false;
                     this._lastSelect = index;
                 }
             }
             else {
-                selected.visible = false;
-                normal.visible = true;
             }
         }
         this.SetUnlockMethod(this._lastSelect);
@@ -8020,16 +7852,7 @@ var UnlockSkinView = /** @class */ (function (_super) {
                     this.UnlockSkin(index);
                 }
                 else {
-                    // this._unlockByDia_Btn.visible = false;
-                    this._unlockByVideo_View.visible = true;
                 }
-                // else {
-                //     this._unlockByDia_Btn.visible = false;
-                //     this._unlockByVideo_Btn.visible = false;
-                //     this._useSkin_Btn.visible = false;
-                //     this._selectSkin_Text.visible = true;
-                //     this._selectSkin_Text.text = "钻石不足，无法解锁皮肤";
-                // }
             }
         }
     };
@@ -8055,18 +7878,15 @@ var UnlockSkinView = /** @class */ (function (_super) {
             var using = this._itemArray[i].getChildByName("Using");
             if (i == index && SkinMgr_1.default.Instance.GetSkinAvailable(index)) {
                 if (SkinMgr_1.default.Instance.GetCurrentSkin() != index) {
-                    using.visible = true;
                     SkinMgr_1.default.Instance.SetCurrentSkin(index);
                     lab.text = "取消使用";
                 }
-                else {
-                    using.visible = false;
+                else {;
                     SkinMgr_1.default.Instance.SetCurrentSkin(-1);
                     lab.text = "使用皮肤";
                 }
             }
             else {
-                using.visible = false;
             }
         }
     };
