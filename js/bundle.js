@@ -7888,10 +7888,10 @@ var UnlockSkinView = /** @class */ (function (_super) {
             this._selectSkin_Text.visible = false;
             var lab = this._useSkin_Btn.getChildByName("lab");
             if (SkinMgr_1.default.Instance.GetCurrentSkin() == index) {
-                lab.text = "取消使用";
+                lab.text = "Cancel Use";
             }
             else {
-                lab.text = "使用皮肤";
+                lab.text = "Use Skin";
             }
         }
         else if (unlockByVidelo) {
@@ -7928,7 +7928,7 @@ var UnlockSkinView = /** @class */ (function (_super) {
                 this._unlockByVideo_View.visible = false;
                 this._useSkin_Btn.visible = false;
                 this._selectSkin_Text.visible = true;
-                this._selectSkin_Text.text = "点击图标选择您想要的皮肤";
+                this._selectSkin_Text.text = "Select the skin";
             }
         }
     };
@@ -8051,12 +8051,12 @@ var UnlockSkinView = /** @class */ (function (_super) {
                 if (SkinMgr_1.default.Instance.GetCurrentSkin() != index) {
                     using.visible = true;
                     SkinMgr_1.default.Instance.SetCurrentSkin(index);
-                    lab.text = "取消使用";
+                    lab.text = "Cancel Use";
                 }
                 else {
                     using.visible = false;
                     SkinMgr_1.default.Instance.SetCurrentSkin(-1);
-                    lab.text = "使用皮肤";
+                    lab.text = "Use Skin";
                 }
             }
             else {
