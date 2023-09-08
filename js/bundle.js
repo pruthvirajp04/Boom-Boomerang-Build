@@ -7514,19 +7514,19 @@ var PrizeDraw = /** @class */ (function (_super) {
             this._receive_Btn.visible = true;
             this._share_Btn.visible = false;
             this._receiveTimes_Text.visible = true;
-            this._receiveTimes_Text.text = "免费次数" + this._drawTimes + "/3";
+            this._receiveTimes_Text.text = "Free times" + this._drawTimes + "/3";
         }
         else if (this._exDrawTimes > 0) {
             this._receive_Btn.visible = true;
             this._share_Btn.visible = false;
             this._receiveTimes_Text.visible = true;
-            this._receiveTimes_Text.text = "额外次数" + this._exDrawTimes + "/3";
+            this._receiveTimes_Text.text = "Extra times" + this._exDrawTimes + "/3";
         }
         else {
             this._receive_Btn.visible = false;
             this._share_Btn.visible = true;
             this._receiveTimes_Text.visible = true;
-            this._receiveTimes_Text.text = "领取次数用完，分享后可重新获得";
+            this._receiveTimes_Text.text = "Claims exhausted, get it by sharing";
         }
     };
     /**
