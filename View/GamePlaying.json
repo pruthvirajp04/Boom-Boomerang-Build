@@ -60,7 +60,7 @@
           "type": "Image",
           "props": {
             "width": 50,
-            "top": 0,
+            "top": 2,
             "skin": "Boomerang_UI/1_0009_图层-39-拷贝.png",
             "right": 30,
             "bottom": 0
