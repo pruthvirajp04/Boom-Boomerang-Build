@@ -75,10 +75,12 @@
       "props": {
         "y": 0,
         "x": 0,
-        "top": 365,
+        "top": 405,
         "skin": "Boomerang_UI/图层 533 拷贝 2.png",
         "scaleY": 1.5,
         "scaleX": 1.5,
+        "width":300,
+        "height":400,
         "mouseEnabled": false,
         "centerX": 0
       },
@@ -368,6 +370,8 @@
         "skin": "1014回旋镖切图 原图/转盘.png",
         "sizeGrid":"20,20,35,20",
         "name": "PrizeDraw_Btn",
+        "width":150,
+        "height":150,
         "left": 0
       },
       "compId": 39
@@ -380,6 +384,8 @@
         "top": 480,
         "skin": "1014回旋镖切图 原图/签到.png",
         "name": "SignIn_Btn",
+        "width":150,
+        "height":150,
         "left": 0
       },
       "compId": 40
