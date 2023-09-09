@@ -207,7 +207,7 @@
       "props": {
         "y": 400,
         "x": 30,
-        "width": 450,
+        "width": 1390,
         "stateNum": 1,
         "skin": "Boomerang_UI/更多好玩bg.png",
         "name": "ReturnMain_Btn",
