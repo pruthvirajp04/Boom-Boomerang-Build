@@ -60,7 +60,7 @@
           "type": "Image",
           "props": {
             "width": 50,
-            "top": 2,
+            "top": 0,
             "skin": "Boomerang_UI/1_0009_图层-39-拷贝.png",
             "right": 30,
             "bottom": 0
@@ -205,21 +205,21 @@
     {
       "type": "Button",
       "props": {
-        "y": 400,
-        "x": 30,
-        "width": 1390,
+        "y": 894,
+        "x": 0,
+        "width": 200,
         "stateNum": 1,
         "skin": "Boomerang_UI/更多好玩bg.png",
         "name": "ReturnMain_Btn",
-        "left": 0,
+        "left": 600,
         "labelSize": 52,
         "labelFont": "Microsoft YaHei",
         "labelColors": "#ffffff",
         "labelBold": true,
         "labelAlign": "center",
         "label": "🏠",
-        "height": 1800,
-        "bottom": 360
+        "height": 80,
+        "bottom": 1200
       },
       "compId": 14
     },
