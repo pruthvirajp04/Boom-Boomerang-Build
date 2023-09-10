@@ -214,8 +214,8 @@
         
         "skin": "Boomerang_UI/1_0004_返回首页.png",
         "name": "ReturnMain_Btn",
-        "left": 265,
-        "bottom": 890
+        "left": 65,
+        "bottom": 290
       },
       "compId": 7
     },
