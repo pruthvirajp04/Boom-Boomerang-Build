@@ -134,10 +134,12 @@
               "type": "Image",
               "props": {
                 "skin": "Boomerang_UI/微信图片_20190919134612.png",
+                "width":240,
+                "height":100,
                 "scaleY": 1.2,
                 "scaleX": 1.2,
                 "centerX": 0,
-                "bottom": 0,
+                "top": 300,
                 "anchorY": 0.5,
                 "anchorX": 0.5
               },
