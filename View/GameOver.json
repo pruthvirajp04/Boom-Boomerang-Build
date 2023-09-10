@@ -1,1 +1,327 @@
-{"type":"View","props":{"width":750,"top":0,"right":0,"left":0,"height":1334,"bottom":0},"compId":2,"child":[{"type":"Box","props":{"width":750,"top":0,"mouseThrough":false,"mouseEnabled":true,"left":0,"bottom":0,"bgColor":"#dadada"},"compId":3},{"type":"Box","props":{"y":49,"x":0,"width":210,"top":49,"name":"Diamonds_Box","height":50},"compId":25,"child":[{"type":"Image","props":{"width":50,"top":0,"skin":"Boomerang_UI/1_0009_图层-39-拷贝.png","right":30,"bottom":0},"compId":26},{"type":"Text","props":{"y":0,"x":0,"width":130,"valign":"middle","text":"0","strokeColor":"#ffffff","stroke":3,"overflow":"visible","name":"DiamondsCount_Text","height":50,"fontSize":50,"font":"SimHei","color":"#ffeb06","bold":false,"align":"center","runtime":"laya.display.Text"},"compId":27}]},{"type":"Image","props":{"top":110,"skin":"Boomerang_UI/1_0010_恭喜过关.png","name":"Title","mouseEnabled":false,"centerX":0},"compId":4},{"type":"Box","props":{"width":300,"name":"AddDia_Box","mouseEnabled":false,"height":80,"centerX":-170,"bottom":420},"compId":5,"child":[{"type":"Text","props":{"y":0,"width":220,"valign":"middle","text":"+5","strokeColor":"#ffffff","stroke":3,"name":"AddDia_Text","mouseEnabled":false,"height":80,"fontSize":80,"font":"SimHei","color":"#ffeb06","align":"center","runtime":"laya.display.Text"},"compId":11},{"type":"Image","props":{"width":80,"skin":"Boomerang_UI/1_0009_图层-39-拷贝.png","right":0,"mouseEnabled":false,"height":80},"compId":12}]},{"type":"Image","props":{"width":320,"stateNum":1,"skin":"Boomerang_UI/领取钻石0.png","sizeGrid":"20,30,40,30","pivotY":54,"pivotX":150,"name":"DoubleDa_Btn","labelSize":55,"labelPadding":"0,0,10,60","labelFont":"SimHei","labelColors":"#ffffff","labelBold":true,"labelAlign":"center","hitTestPrior":true,"centerX":160,"bottom":394},"compId":6,"child":[{"type":"Image","props":{"width":320,"stateNum":1,"skin":"Boomerang_UI/双倍钻石.png","sizeGrid":"20,30,40,30","pivotY":54,"pivotX":150,"name":"NoIco","mouseEnabled":false,"labelSize":55,"labelPadding":"0,0,10,60","labelFont":"SimHei","labelColors":"#ffffff","labelBold":true,"labelAlign":"center","height":120,"centerY":0,"centerX":0},"compId":13},{"type":"Image","props":{"stateNum":1,"skin":"Boomerang_UI/微信图片_201908141416441.png","sizeGrid":"20,30,40,30","pivotY":54,"pivotX":150,"name":"VideoIco","mouseEnabled":false,"labelSize":55,"labelPadding":"0,0,10,60","labelFont":"SimHei","labelColors":"#ffffff","labelBold":true,"labelAlign":"center","centerY":0,"centerX":0},"compId":14},{"type":"Script","props":{"y":37,"x":250,"runtime":"script/MyAdView/HideAdvVideoIco.ts"},"compId":15}]},{"type":"Image","props":{"width":220,"stateNum":1,"skin":"Boomerang_UI/1_0004_返回首页.png","name":"ReturnMain_Btn","left":65,"bottom":290},"compId":7},{"type":"Image","props":{"width":220,"stateNum":1,"skin":"Boomerang_UI/1_0007_继续游戏.png","right":65,"name":"ContinueGame_Btn","bottom":290},"compId":8},{"type":"Clip","props":{"width":640,"top":245,"skin":"Boomerang_UI/140矩形bg.png","sizeGrid":"20,20,35,20","name":"LoopAd_View","height":520,"clipY":1,"clipX":1,"centerX":0},"compId":9,"child":[{"type":"List","props":{"top":0,"spaceY":35,"spaceX":35,"right":0,"repeatY":2,"repeatX":3,"name":"List","left":0,"bottom":0},"compId":17,"child":[{"type":"Box","props":{"y":36,"x":33,"width":170,"renderType":"render","height":220},"compId":18,"child":[{"type":"Sprite","props":{"width":170,"name":"Display","height":170},"compId":19},{"type":"Text","props":{"y":170,"x":0,"width":170,"valign":"bottom","name":"TitelText","height":40,"fontSize":27,"font":"SimHei","color":"#000000","bold":true,"align":"center","runtime":"laya.display.Text"},"compId":20},{"type":"Script","props":{"runtime":"script/MyMgr/MyLoopAdBox.ts"},"compId":34}]}]},{"type":"Script","props":{"runtime":"ShareAd/View/HorizontalLoopAdView.ts"},"compId":29}]},{"type":"Script","props":{"runtime":"script/MyView/GameOver.ts"},"compId":28}],"loadList":["Boomerang_UI/1_0009_图层-39-拷贝.png","Boomerang_UI/1_0010_恭喜过关.png","Boomerang_UI/领取钻石0.png","Boomerang_UI/双倍钻石.png","Boomerang_UI/微信图片_201908141416441.png","Boomerang_UI/1_0004_返回首页.png","Boomerang_UI/1_0007_继续游戏.png","Boomerang_UI/140矩形bg.png"],"loadList3D":[]}
+{
+  "type": "View",
+  "props": {
+    "width": 750,
+    "top": 0,
+    "right": 0,
+    "left": 0,
+    "height": 1334,
+    "bottom": 0
+  },
+  "compId": 2,
+  "child": [
+    {
+      "type": "Box",
+      "props": {
+        "width": 750,
+        "top": 0,
+        "mouseThrough": false,
+        "mouseEnabled": true,
+        "left": 0,
+        "bottom": 0,
+        "bgColor": "#dadada"
+      },
+      "compId": 3
+    },
+    {
+      "type": "Box",
+      "props": {
+        "y": 49,
+        "x": 0,
+        "width": 210,
+        "top": 49,
+        "name": "Diamonds_Box",
+        "height": 50
+      },
+      "compId": 25,
+      "child": [
+        {
+          "type": "Image",
+          "props": {
+            "width": 50,
+            "top": 0,
+            "skin": "Boomerang_UI/1_0009_图层-39-拷贝.png",
+            "right": 30,
+            "bottom": 0
+          },
+          "compId": 26
+        },
+        {
+          "type": "Text",
+          "props": {
+            "y": 0,
+            "x": 0,
+            "width": 130,
+            "valign": "middle",
+            "text": "0",
+            "strokeColor": "#ffffff",
+            "stroke": 3,
+            "overflow": "visible",
+            "name": "DiamondsCount_Text",
+            "height": 50,
+            "fontSize": 50,
+            "font": "SimHei",
+            "color": "#ffeb06",
+            "bold": false,
+            "align": "center",
+            "runtime": "laya.display.Text"
+          },
+          "compId": 27
+        }
+      ]
+    },
+    {
+      "type": "Image",
+      "props": {
+        "top": 680,
+        "skin": "Boomerang_UI/1_0010_恭喜过关.png",
+        "name": "Title",
+        "mouseEnabled": false,
+        "centerX": 0
+      },
+      "compId": 4
+    },
+    {
+      "type": "Box",
+      "props": {
+        "width": 300,
+        "name": "AddDia_Box",
+        "mouseEnabled": false,
+        "height": 80,
+        "centerX": -170,
+        "bottom": 420
+      },
+      "compId": 5,
+      "child": [
+        {
+          "type": "Text",
+          "props": {
+            "y": 0,
+            "width": 220,
+            "valign": "middle",
+            "text": "+5",
+            "strokeColor": "#ffffff",
+            "stroke": 3,
+            "name": "AddDia_Text",
+            "mouseEnabled": false,
+            "height": 80,
+            "fontSize": 80,
+            "font": "SimHei",
+            "color": "#ffeb06",
+            "align": "center",
+            "runtime": "laya.display.Text"
+          },
+          "compId": 11
+        },
+        {
+          "type": "Image",
+          "props": {
+            "width": 80,
+            "skin": "Boomerang_UI/1_0009_图层-39-拷贝.png",
+            "right": 0,
+            "mouseEnabled": false,
+            "height": 80
+          },
+          "compId": 12
+        }
+      ]
+    },
+    {
+      "type": "Image",
+      "props": {
+        "width": 320,
+        "stateNum": 1,
+        "skin": "Boomerang_UI/领取钻石0.png",
+        "sizeGrid": "20,30,40,30",
+        "pivotY": 54,
+        "pivotX": 150,
+        "name": "DoubleDa_Btn",
+        "labelSize": 55,
+        "labelPadding": "0,0,10,60",
+        "labelFont": "SimHei",
+        "labelColors": "#ffffff",
+        "labelBold": true,
+        "labelAlign": "center",
+        "hitTestPrior": true,
+        "centerX": 160,
+        "bottom": 394
+      },
+      "compId": 6,
+      "child": [
+        {
+          "type": "Image",
+          "props": {
+            "width": 320,
+            "stateNum": 1,
+            "skin": "Boomerang_UI/双倍钻石.png",
+            "sizeGrid": "20,30,40,30",
+            "pivotY": 54,
+            "pivotX": 150,
+            "name": "NoIco",
+            "mouseEnabled": false,
+            "labelSize": 55,
+            "labelPadding": "0,0,10,60",
+            "labelFont": "SimHei",
+            "labelColors": "#ffffff",
+            "labelBold": true,
+            "labelAlign": "center",
+            "height": 120,
+            "centerY": 0,
+            "centerX": 0
+          },
+          "compId": 13
+        },
+        {
+          "type": "Image",
+          "props": {
+            "stateNum": 1,
+            "skin": "Boomerang_UI/微信图片_201908141416441.png",
+            "sizeGrid": "20,30,40,30",
+            "pivotY": 54,
+            "pivotX": 150,
+            "name": "VideoIco",
+            "mouseEnabled": false,
+            "labelSize": 55,
+            "labelPadding": "0,0,10,60",
+            "labelFont": "SimHei",
+            "labelColors": "#ffffff",
+            "labelBold": true,
+            "labelAlign": "center",
+            "centerY": 0,
+            "centerX": 0
+          },
+          "compId": 14
+        },
+        {
+          "type": "Script",
+          "props": {
+            "y": 37,
+            "x": 250,
+            "runtime": "script/MyAdView/HideAdvVideoIco.ts"
+          },
+          "compId": 15
+        }
+      ]
+    },
+    {
+      "type": "Image",
+      "props": {
+        "width": 220,
+        "stateNum": 1,
+        "skin": "Boomerang_UI/1_0004_返回首页.png",
+        "name": "ReturnMain_Btn",
+        "left": 65,
+        "bottom": 290
+      },
+      "compId": 7
+    },
+    {
+      "type": "Image",
+      "props": {
+        "width": 220,
+        "stateNum": 1,
+        "skin": "Boomerang_UI/1_0007_继续游戏.png",
+        "right": 65,
+        "name": "ContinueGame_Btn",
+        "bottom": 290
+      },
+      "compId": 8
+    },
+    {
+      "type": "Clip",
+      "props": {
+        "width": 640,
+        "top": 245,
+        "skin": "Boomerang_UI/140矩形bg.png",
+        "sizeGrid": "20,20,35,20",
+        "name": "LoopAd_View",
+        "height": 520,
+        "clipY": 1,
+        "clipX": 1,
+        "centerX": 0
+      },
+      "compId": 9,
+      "child": [
+        {
+          "type": "List",
+          "props": {
+            "top": 0,
+            "spaceY": 35,
+            "spaceX": 35,
+            "right": 0,
+            "repeatY": 2,
+            "repeatX": 3,
+            "name": "List",
+            "left": 0,
+            "bottom": 0
+          },
+          "compId": 17,
+          "child": [
+            {
+              "type": "Box",
+              "props": {
+                "y": 36,
+                "x": 33,
+                "width": 170,
+                "renderType": "render",
+                "height": 220
+              },
+              "compId": 18,
+              "child": [
+                {
+                  "type": "Sprite",
+                  "props": { "width": 170, "name": "Display", "height": 170 },
+                  "compId": 19
+                },
+                {
+                  "type": "Text",
+                  "props": {
+                    "y": 170,
+                    "x": 0,
+                    "width": 170,
+                    "valign": "bottom",
+                    "name": "TitelText",
+                    "height": 40,
+                    "fontSize": 27,
+                    "font": "SimHei",
+                    "color": "#000000",
+                    "bold": true,
+                    "align": "center",
+                    "runtime": "laya.display.Text"
+                  },
+                  "compId": 20
+                },
+                {
+                  "type": "Script",
+                  "props": { "runtime": "script/MyMgr/MyLoopAdBox.ts" },
+                  "compId": 34
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Script",
+          "props": { "runtime": "ShareAd/View/HorizontalLoopAdView.ts" },
+          "compId": 29
+        }
+      ]
+    },
+    {
+      "type": "Script",
+      "props": { "runtime": "script/MyView/GameOver.ts" },
+      "compId": 28
+    }
+  ],
+  "loadList": [
+    "Boomerang_UI/1_0009_图层-39-拷贝.png",
+    "Boomerang_UI/1_0010_恭喜过关.png",
+    "Boomerang_UI/领取钻石0.png",
+    "Boomerang_UI/双倍钻石.png",
+    "Boomerang_UI/微信图片_201908141416441.png",
+    "Boomerang_UI/1_0004_返回首页.png",
+    "Boomerang_UI/1_0007_继续游戏.png",
+    "Boomerang_UI/140矩形bg.png"
+  ],
+  "loadList3D": []
+}
