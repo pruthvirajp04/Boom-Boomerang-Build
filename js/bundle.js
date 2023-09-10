@@ -7526,7 +7526,7 @@ var MoreGame = /** @class */ (function (_super) {
     }
     MoreGame.prototype.onAwake = function () {
         alert("df")
-        this._return_Btn = this.owner.getChildByName("Return_Btn");
+        ViewMgr_1.default.instance.openView(ViewMgr_1.ViewDef.GameMain);
     };
     MoreGame.prototype.addEvent = function () {
       
