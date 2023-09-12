@@ -1251,12 +1251,7 @@ var GameMgr = /** @class */ (function (_super) {
         }
        
        
-        if(sessionStorage.getItem("reward-type") == "replay-RP"){
-            sessionStorage.removeItem("reward-type");
-            if(replayInstance != undefined)
-            replayInstance.destroyAd();
-            replayInstance = window.GlanceGamingAdInterface.loadRewardedAd(replayObj, GameMgr.prototype.rewardedCallbacks);
-        }
+   
      
         if(sessionStorage.getItem("reward-type") == "replay-RP2"){
             sessionStorage.removeItem("reward-type");
@@ -7213,7 +7208,7 @@ var GameOver = /** @class */ (function (_super) {
     GameOver.prototype.ReturnMain = function () {
         // alert("returning home")
         if (!is_replay_noFill) {
-            sessionStorage.setItem("reward-type","replay-RP");
+            sessionStorage.setItem("reward-type","replay-RP2");
             Laya.SoundManager.muted = true;
             window.GlanceGamingAdInterface.showRewarededAd(replayInstance);
         }else{
