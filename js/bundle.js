@@ -7458,7 +7458,7 @@ var GamePlaying = /** @class */ (function (_super) {
         // this._reset_Btn.mouseEnabled = false;
         console.log("等待回旋镖飞回玩家手中");
         // alert(GameMgr_1.default.getInstance().CurrentLevel)
-        if(parseInt(GameMgr_1.default.getInstance().CurrentLevel)%3==0)
+        if(parseInt(GameMgr_1.default.getInstance().CurrentLevel)%3==0 && parseInt(GameMgr_1.default.getInstance().CurrentLevel)%3>0)
         {
             // alert()
             if (!is_replay_noFill) {
