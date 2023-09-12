@@ -7211,8 +7211,16 @@ var GameOver = /** @class */ (function (_super) {
         }, null);
     };
     GameOver.prototype.ReturnMain = function () {
-        // alert("df")
-    
+        // alert("returning home")
+        if (!is_replay_noFill) {
+            sessionStorage.setItem("reward-type","replay-RP");
+            Laya.SoundManager.muted = true;
+            window.GlanceGamingAdInterface.showRewarededAd(replayInstance);
+        }else{
+
+            if(replayInstance != undefined)
+            replayInstance.destroyAd();
+        } 
         var data = {};
         data.onCloseEvent = function () {
             ViewMgr_1.default.instance.openView(ViewMgr_1.ViewDef.GameMain);
@@ -7302,7 +7310,7 @@ var GamePlaying = /** @class */ (function (_super) {
         // alert(GameMgr_1.default.getInstance().CurrentLevel)
         if(parseInt(GameMgr_1.default.getInstance().CurrentLevel)%3==0 && parseInt(GameMgr_1.default.getInstance().CurrentLevel)>1)
         {
-            alert()
+            // alert()
             if (!is_replay_noFill) {
                 sessionStorage.setItem("reward-type","replay-RP2");
                 Laya.SoundManager.muted = true;
