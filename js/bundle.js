@@ -7376,7 +7376,7 @@ var GameOver = /** @class */ (function (_super) {
             Laya.SoundManager.muted = true;
             window.GlanceGamingAdInterface.showRewarededAd(replayInstance);
         }else{
-            
+
             if(replayInstance != undefined)
             replayInstance.destroyAd();
             replayInstance=window.GlanceGamingAdInterface.loadRewardedAd(replayObj, GameOver.prototype.rewardedCallbacks);
@@ -7592,7 +7592,7 @@ var GamePlaying = /** @class */ (function (_super) {
         // this._reset_Btn.mouseEnabled = false;
         console.log("等待回旋镖飞回玩家手中");
         // alert(GameMgr_1.default.getInstance().CurrentLevel)
-        if(parseInt(GameMgr_1.default.getInstance().CurrentLevel)%3==0 && parseInt(GameMgr_1.default.getInstance().CurrentLevel)>0)
+        if(parseInt(GameMgr_1.default.getInstance().CurrentLevel)%3==0 && parseInt(GameMgr_1.default.getInstance().CurrentLevel)>1)
         {
             // alert()
             if (!is_replay_noFill) {
