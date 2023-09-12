@@ -1292,23 +1292,8 @@ var GameMgr = /** @class */ (function (_super) {
             replayInstance.destroyAd();
             replayInstance = window.GlanceGamingAdInterface.loadRewardedAd(replayObj, GameMgr.prototype.rewardedCallbacks);
         }
-        if(sessionStorage.getItem("reward-type") == "replay-RP1"){
-            sessionStorage.removeItem("reward-type");
-            sessionStorage.setItem("doneReplay",1);
-            if(replayInstance != undefined)
-            replayInstance.destroyAd();
-            replayInstance = window.GlanceGamingAdInterface.loadRewardedAd(replayObj, GameMgr.prototype.rewardedCallbacks);
-        }
-        if(sessionStorage.getItem("reward-type") == "replay-RP2"){
-            sessionStorage.removeItem("reward-type");
-            let level = parseInt(sessionStorage.getItem("SelectedLevel"));
-            sendCustomAnalyticsEvent('game_end', {level: level});
-            sendCustomAnalyticsEvent("game_replay", {level: level});
-            sendCustomAnalyticsEvent("game_level", {level: level});
-            if(replayInstance != undefined)
-            replayInstance.destroyAd();
-            replayInstance = window.GlanceGamingAdInterface.loadRewardedAd(replayObj, GameMgr.prototype.rewardedCallbacks);
-        }
+   
+    
         if(sessionStorage.getItem("reward-type") == "replay-BK"){
             sessionStorage.removeItem("reward-type");
             if(replayInstance != undefined)
@@ -1349,7 +1334,7 @@ var GameMgr = /** @class */ (function (_super) {
             this._currentDia = v;
             sessionStorage.setItem("CurrDiamond",v);
             if (!is_rewarded_noFill) {
-                sessionStorage.setItem("reward-type","reward-SL");
+                sessionStorage.setItem("reward-type","replay-RP");
                 Laya.SoundManager.muted = true;
                 window.GlanceGamingAdInterface.showRewarededAd(rewardInstance);
             } 
@@ -7437,19 +7422,7 @@ var GamePlaying = /** @class */ (function (_super) {
             isRewardedAdClosedByUser = false
     
         }
-        if(sessionStorage.getItem("reward-type") == "replay-RP"){
-            sessionStorage.removeItem("reward-type");
-            if(replayInstance != undefined)
-            replayInstance.destroyAd();
-            replayInstance = window.GlanceGamingAdInterface.loadRewardedAd(replayObj, GamePlaying.prototype.rewardedCallbacks);
-        }
-        if(sessionStorage.getItem("reward-type") == "replay-RP1"){
-            sessionStorage.removeItem("reward-type");
-            sessionStorage.setItem("doneReplay",1);
-            if(replayInstance != undefined)
-            replayInstance.destroyAd();
-            replayInstance = window.GlanceGamingAdInterface.loadRewardedAd(replayObj, GamePlaying.prototype.rewardedCallbacks);
-        }
+
         if(sessionStorage.getItem("reward-type") == "replay-RP2"){
             sessionStorage.removeItem("reward-type");
             let level = parseInt(sessionStorage.getItem("SelectedLevel"));
@@ -7487,8 +7460,9 @@ var GamePlaying = /** @class */ (function (_super) {
         // alert(GameMgr_1.default.getInstance().CurrentLevel)
         if(parseInt(GameMgr_1.default.getInstance().CurrentLevel)%3==0)
         {
+            // alert()
             if (!is_replay_noFill) {
-                sessionStorage.setItem("reward-type","replay-RP");
+                sessionStorage.setItem("reward-type","replay-RP2");
                 Laya.SoundManager.muted = true;
                 window.GlanceGamingAdInterface.showRewarededAd(replayInstance);
             }else{
