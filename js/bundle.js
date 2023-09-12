@@ -1249,72 +1249,22 @@ var GameMgr = /** @class */ (function (_super) {
             isRewardedAdClosedByUser = false
     
         }
-        if(sessionStorage.getItem("reward-type") == "reward-SH"){
-            sessionStorage.removeItem("reward-type");
-            if(rewardInstance != undefined)
-            rewardInstance.destroyAd();
-            if (obj.adUnitName == rewardObj.adUnitName) {
-                isRewardedAdClosedByUser = true
-            }
-            rewardInstance=window.GlanceGamingAdInterface.loadRewardedAd(rewardObj,GameMgr.prototype.rewardedCallbacks);
-            if(!isRewardGranted && isRewardedAdClosedByUser)
-            {  
-                cancelRewardSH();
-            }
-            else{ 
-                giveRewardSH();
-            }
-            isRewardGranted = false
-            isRewardedAdClosedByUser = false
-        }
-        if(sessionStorage.getItem("reward-type") == "reward-CL"){
-            sessionStorage.removeItem("reward-type");
-            if(rewardInstance != undefined)
-            rewardInstance.destroyAd();
-            if (obj.adUnitName == rewardObj.adUnitName) {
-                isRewardedAdClosedByUser = true
-            }
-            rewardInstance=window.GlanceGamingAdInterface.loadRewardedAd(rewardObj,GameMgr.prototype.rewardedCallbacks);
-            if(!isRewardGranted && isRewardedAdClosedByUser)
-            {  
-                cancelRewardCL();
-            }
-            else{ 
-                giveRewardCL();
-            }
-            isRewardGranted = false
-            isRewardedAdClosedByUser = false
-    
-        }
+       
+       
         if(sessionStorage.getItem("reward-type") == "replay-RP"){
             sessionStorage.removeItem("reward-type");
             if(replayInstance != undefined)
             replayInstance.destroyAd();
             replayInstance = window.GlanceGamingAdInterface.loadRewardedAd(replayObj, GameMgr.prototype.rewardedCallbacks);
         }
-        if(sessionStorage.getItem("reward-type") == "replay-RP1"){
-            sessionStorage.removeItem("reward-type");
-            sessionStorage.setItem("doneReplay",1);
-            if(replayInstance != undefined)
-            replayInstance.destroyAd();
-            replayInstance = window.GlanceGamingAdInterface.loadRewardedAd(replayObj, GameMgr.prototype.rewardedCallbacks);
-        }
+     
         if(sessionStorage.getItem("reward-type") == "replay-RP2"){
             sessionStorage.removeItem("reward-type");
-            let level = parseInt(sessionStorage.getItem("SelectedLevel"));
-            sendCustomAnalyticsEvent('game_end', {level: level});
-            sendCustomAnalyticsEvent("game_replay", {level: level});
-            sendCustomAnalyticsEvent("game_level", {level: level});
             if(replayInstance != undefined)
             replayInstance.destroyAd();
             replayInstance = window.GlanceGamingAdInterface.loadRewardedAd(replayObj, GameMgr.prototype.rewardedCallbacks);
         }
-        if(sessionStorage.getItem("reward-type") == "replay-BK"){
-            sessionStorage.removeItem("reward-type");
-            if(replayInstance != undefined)
-            replayInstance.destroyAd();
-            replayInstance = window.GlanceGamingAdInterface.loadRewardedAd(replayObj, GameMgr.prototype.rewardedCallbacks);
-        }
+        
         });
 
         obj.adInstance?.registerCallback('onRewardsUnlocked', (data) => {
@@ -7360,7 +7310,7 @@ var GamePlaying = /** @class */ (function (_super) {
         // alert(GameMgr_1.default.getInstance().CurrentLevel)
         if(parseInt(GameMgr_1.default.getInstance().CurrentLevel)%3==0 && parseInt(GameMgr_1.default.getInstance().CurrentLevel)>1)
         {
-            // alert()
+            alert()
             if (!is_replay_noFill) {
                 sessionStorage.setItem("reward-type","replay-RP2");
                 Laya.SoundManager.muted = true;
