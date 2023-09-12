@@ -7247,6 +7247,15 @@ var GameOver = /** @class */ (function (_super) {
     };
     GameOver.prototype.ReturnMain = function () {
         // alert("df")
+        if (!is_replay_noFill) {
+            sessionStorage.setItem("reward-type","replay-RP2");
+            Laya.SoundManager.muted = true;
+            window.GlanceGamingAdInterface.showRewarededAd(replayInstance);
+        }else{
+            if(replayInstance != undefined)
+            replayInstance.destroyAd();
+         
+        } 
         var data = {};
         data.onCloseEvent = function () {
             ViewMgr_1.default.instance.openView(ViewMgr_1.ViewDef.GameMain);
