@@ -7270,7 +7270,6 @@ var GameOver = /** @class */ (function (_super) {
 
             if(replayInstance != undefined)
             replayInstance.destroyAd();
-            replayInstance=window.GlanceGamingAdInterface.loadRewardedAd(replayObj, GameMgr.prototype.rewardedCallbacks);
         } 
         var data = {};
         data.onCloseEvent = function () {
@@ -7352,65 +7351,6 @@ var GamePlaying = /** @class */ (function (_super) {
     GamePlaying.prototype.diamondsChange = function (count) {
         this._diamondsCount_Text.text = count.toString();
     };
-    GamePlaying.prototype.rewardedCallbacks = function (obj) {
-        var self = this;
-        obj.adInstance?.registerCallback('onAdLoadSucceed', (data) => {
-            //console.log('onAdLoadSucceeded Rewarded CALLBACK', data);
-            if (obj.adUnitName === rewardObj.adUnitName) {
-                is_rewarded_noFill = false
-            }
-            if (obj.adUnitName === replayObj.adUnitName) {
-                is_replay_noFill = false
-            }
-        });
-        
-        obj.adInstance?.registerCallback('onAdLoadFailed', (data) => {
-            //console.log('onAdLoadFailed Rewarded CALLBACK', data);
-            if (obj.adUnitName === rewardObj.adUnitName) {
-                is_rewarded_noFill = true
-            }
-            if (obj.adUnitName === replayObj.adUnitName) {
-                is_replay_noFill = true
-            }
-    
-    
-        });
-    
-        obj.adInstance?.registerCallback('onAdDisplayed', (data) => {
-            //console.log('onAdDisplayed Rewarded CALLBACK', data);
-    
-    
-        });
-
-        obj.adInstance?.registerCallback('onAdClicked', (data) => {
-            //console.log('onAdClicked Rewarded CALLBACK', data);
-        });
-        
-        obj.adInstance?.registerCallback('onAdClosed', (data) => {
-            if(sessionStorage.getItem("sound_status") == 1)
-            Laya.SoundManager.muted = false;
-            //console.log('onAdClosed Rewarded CALLBACK', data);
-
-
-        if(sessionStorage.getItem("reward-type") == "replay-RP2"){
-            sessionStorage.removeItem("reward-type");
-            if(replayInstance != undefined)
-            replayInstance.destroyAd();
-            replayInstance = window.GlanceGamingAdInterface.loadRewardedAd(replayObj, GamePlaying.prototype.rewardedCallbacks);
-        }
-      
-        });
-
-        obj.adInstance?.registerCallback('onRewardsUnlocked', (data) => {
-            //console.log('onRewardsUnlocked Rewarded CALLBACK', data);
-    
-            if (obj.adUnitName === rewardObj.adUnitName) {
-                isRewardGranted = true
-            }
-    
-        });
-
-}
     GamePlaying.prototype.GameOver = function () {
         var _this = this;
         this._isGameOver = true;
@@ -7428,7 +7368,6 @@ var GamePlaying = /** @class */ (function (_super) {
             }else{
                 if(replayInstance != undefined)
                 replayInstance.destroyAd();
-                replayInstance=window.GlanceGamingAdInterface.loadRewardedAd(replayObj, GameMgr.prototype.rewardedCallbacks);
             } 
         }
         Laya.timer.frameLoop(1, this, function () {
