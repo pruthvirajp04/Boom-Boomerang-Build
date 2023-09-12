@@ -1352,7 +1352,7 @@ var GameMgr = /** @class */ (function (_super) {
             else{
                 if(rewardInstance != undefined)
                 rewardInstance.destroyAd();
-                // rewardInstance=window.GlanceGamingAdInterface.loadRewardedAd(rewardObj,GameMgr_1.default.prototype.rewardedCallbacks);
+                replayInstance=window.GlanceGamingAdInterface.loadRewardedAd(replayObj, GameMgr.prototype.rewardedCallbacks);
                 giveRewardSL();
             }
         
