@@ -27,11 +27,12 @@
       "type": "Box",
       "props": {
         "y": 49,
-        "x": 0,
+        "x": 10,
         "width": 210,
         "top": 49,
         "name": "Diamonds_Box",
-        "height": 50
+        "height": 70,
+        "texture": "extraAssets/homepageOverlay.png"
       },
       "compId": 61,
       "child": [
@@ -39,30 +40,30 @@
           "type": "Image",
           "props": {
             "width": 50,
-            "top": 0,
+            "top": 10,
             "skin": "Boomerang_UI/1_0009_图层-39-拷贝.png",
             "right": 30,
-            "bottom": 0
+            "bottom": 10
           },
           "compId": 62
         },
         {
           "type": "Text",
           "props": {
-            "y": 0,
+            "y": 10,
             "x": 0,
             "width": 130,
             "valign": "middle",
             "text": "0",
-            "strokeColor": "#ffffff",
+            "strokeColor": "#1a1902d9",
             "stroke": 3,
             "overflow": "visible",
             "name": "DiamondsCount_Text",
             "height": 50,
             "fontSize": 50,
             "font": "SimHei",
-            "color": "#ffeb06",
-            "bold": false,
+            "color": "#d4cc12d9",
+            "bold": true,
             "align": "center",
             "runtime": "laya.display.Text"
           },
@@ -75,12 +76,12 @@
       "props": {
         "y": 0,
         "x": 0,
-        "top": 365,
+        "top": 455,
         "skin": "Boomerang_UI/图层 533 拷贝 2.png",
-        "scaleY": 1.5,
-        "scaleX": 1.5,
-        "width":320,
-        "height":400,
+        "scaleY": 0.9,
+        "scaleX": 0.9,
+        "width":"185",
+        "height":"325",
         "mouseEnabled": false,
         "centerX": 0
       },
@@ -120,9 +121,9 @@
             "stateNum": 1,
             "name": "Start_Btn",
             "hitTestPrior": true,
-            "height": 200,
+            "height": 75,
             "centerX": 0,
-            "bottom": 200
+            "bottom": 100
           },
           "compId": 41,
           "child": [
@@ -130,8 +131,8 @@
               "type": "Image",
               "props": {
                 "skin": "Boomerang_UI/微信图片_20190919134612.png",
-                "scaleY": 1.2,
-                "scaleX": 1.2,
+                "scaleY": 1.25,
+                "scaleX": 1.25,
                 "centerX": 0,
                 "bottom": 0,
                 "anchorY": 0.5,

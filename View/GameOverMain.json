@@ -91,9 +91,9 @@
         "mouseEnabled": false,
         "height": 190,
         "centerX": 0,
-        "bottom": 725,
-        "scaleX":1.2,
-        "scaleY":1.2
+        "bottom": 850,
+        "scaleX":1.5,
+        "scaleY":1.5
       },
       "compId": 5,
       "child": [
@@ -144,7 +144,7 @@
         "name": "DoubleDa_Btn",
         "hitTestPrior": true,
         "centerX": 0,
-        "centerY": 150
+        "centerY": 100
       },
       "compId": 6,
       "child": [
@@ -210,7 +210,7 @@
         "stateNum": 1,
         "skin": "extraAssets/homebtn.png",
         "name": "ReturnMain_Btn",
-        "centerY": 450,
+        "centerY": 500,
         "centerX": 0
       },
       "compId": 7
@@ -222,7 +222,7 @@
         "stateNum": 1,
         "skin": "extraAssets/next.png",
         "name": "ContinueGame_Btn",
-        "centerY": 295,
+        "centerY": 300,
         "centerX": 0
       },
       "compId": 8

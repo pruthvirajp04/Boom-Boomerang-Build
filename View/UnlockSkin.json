@@ -1,1 +1,485 @@
-{"type":"View","props":{"zOrder":2,"width":750,"top":0,"right":0,"mouseThrough":true,"left":0,"height":1334,"bottom":0},"compId":2,"child":[{"type":"Box","props":{"top":0,"right":0,"left":0,"bottom":0,"bgColor":"#000000","alpha":0.7},"compId":38},{"type":"Box","props":{"zOrder":4,"right":0,"name":"UnlockSkin_View","mouseThrough":false,"left":0,"height":880,"bottom":273},"compId":3,"child":[{"type":"Sprite","props":{"top":1,"texture":"Boomerang_UI/4_0000_图层-5.png","right":0,"name":"Bg","left":0,"bottom":-1},"compId":4},{"type":"Sprite","props":{"y":30,"x":230,"texture":"Boomerang_UI/4_0001_回旋镖解锁.png","name":"Title"},"compId":6},{"type":"Image","props":{"top":21,"skin":"Boomerang_UI/4_0002_-×.png","right":10,"name":"Close_Btn"},"compId":5},{"type":"Image","props":{"width":300,"visible":false,"skin":"Boomerang_UI/排行榜及邀请好友通用按钮.png","sizeGrid":"20,30,40,30","name":"UnlockByVideo_Btn","left":225,"height":130,"bottom":-2},"compId":7,"child":[{"type":"Sprite","props":{"y":27,"x":47,"texture":"Boomerang_UI/4_0004_图层-3.png"},"compId":8},{"type":"Sprite","props":{"y":30.5,"x":150,"texture":"Boomerang_UI/4_0005_获得.png"},"compId":9}]},{"type":"Image","props":{"width":300,"visible":false,"skin":"Boomerang_UI/排行榜及邀请好友通用按钮.png","sizeGrid":"20,30,40,30","name":"UnlockByDia_Btn","left":225,"height":130,"bottom":-3},"compId":10,"child":[{"type":"Sprite","props":{"y":33,"x":119,"width":56,"texture":"Boomerang_UI/1_0009_图层-39-拷贝.png","height":52},"compId":11},{"type":"Sprite","props":{"y":33,"x":175,"texture":"Boomerang_UI/4_0003_-购买.png"},"compId":12},{"type":"Text","props":{"y":33,"x":16,"width":103,"valign":"middle","text":"600","overflow":"visible","name":"DiamondCount_Text","height":52,"fontSize":50,"font":"Helvetica","color":"#ffffff","bold":true,"align":"center","runtime":"laya.display.Text"},"compId":13}]},{"type":"Image","props":{"width":300,"visible":false,"skin":"Boomerang_UI/排行榜及邀请好友通用按钮.png","sizeGrid":"20,30,40,30","name":"UseSkin_Btn","left":225,"height":130,"bottom":-2},"compId":14,"child":[{"type":"Text","props":{"y":0,"x":0,"width":300,"valign":"middle","text":"Use Skin","overflow":"visible","name":"lab","height":111,"fontSize":60,"font":"Helvetica","color":"#ffffff","bold":true,"align":"center","runtime":"laya.display.Text"},"compId":15}]},{"type":"Text","props":{"y":760,"x":0,"width":750,"valign":"middle","text":"Choose a skin ","overflow":"visible","name":"SelectSkin_Text","height":120,"fontSize":55,"font":"Helvetica","color":"#ffffff","bold":true,"align":"center","runtime":"laya.display.Text"},"compId":16},{"type":"List","props":{"y":430,"x":375,"width":650,"visible":true,"spaceY":30,"spaceX":30,"repeatY":3,"repeatX":3,"pivotY":310,"pivotX":325,"name":"List","height":600},"compId":17,"child":[{"type":"Box","props":{"y":0,"x":25,"width":180,"renderType":"render","height":180},"compId":18,"child":[{"type":"Sprite","props":{"y":0,"x":0,"width":180,"texture":"Boomerang_UI/4_0007_图层-75-拷贝-3.png","name":"Normal","mouseEnabled":false,"height":180},"compId":19},{"type":"Sprite","props":{"y":0,"x":0,"width":180,"visible":false,"texture":"Boomerang_UI/4_0008_图层-1.png","name":"Selected","mouseEnabled":false,"height":180},"compId":20},{"type":"Sprite","props":{"y":0,"x":0,"name":"Skin","mouseEnabled":false},"compId":21},{"type":"Sprite","props":{"y":163,"x":166,"width":47,"texture":"Boomerang_UI/4_0006_图层-2.png","pivotY":40,"pivotX":31,"name":"Locked","mouseEnabled":false,"height":61},"compId":22},{"type":"Text","props":{"y":70,"x":29.328125,"visible":false,"text":"Using","strokeColor":"#383838","stroke":3,"name":"Using","mouseEnabled":false,"fontSize":40,"font":"SimHei","color":"#ffffff","bold":true,"runtime":"laya.display.Text"},"compId":23}]}]},{"type":"Image","props":{"width":500,"visible":false,"skin":"Boomerang_UI/140.png","name":"UnlockByVideo_View","height":400,"centerY":0,"centerX":0},"compId":25,"child":[{"type":"Image","props":{"width":40,"top":10,"skin":"Boomerang_UI/× 拷贝.png","right":10,"pivotY":20,"pivotX":20,"name":"Close_Btn","height":40},"compId":26},{"type":"Image","props":{"width":379,"top":69,"skin":"Boomerang_UI/您的钻石不足 观看视频可直接获得哦.png","pivotY":63,"pivotX":190,"height":107,"centerX":-1},"compId":27},{"type":"Image","props":{"width":300,"visible":true,"skin":"Boomerang_UI/排行榜及邀请好友通用按钮.png","sizeGrid":"20,30,40,30","scaleY":0.7,"scaleX":0.7,"name":"Unlock_Btn","height":130,"centerX":0,"bottom":39},"compId":28,"child":[{"type":"Sprite","props":{"y":27,"x":47,"texture":"Boomerang_UI/4_0004_图层-3.png"},"compId":29},{"type":"Sprite","props":{"y":30.5,"x":150,"texture":"Boomerang_UI/4_0005_获得.png"},"compId":30}]}]}]},{"type":"Script","props":{"y":194,"x":0,"runtime":"script/MyView/UnlockSkinView.ts"},"compId":24}],"loadList":["Boomerang_UI/4_0000_图层-5.png","Boomerang_UI/4_0001_回旋镖解锁.png","Boomerang_UI/4_0002_-×.png","Boomerang_UI/排行榜及邀请好友通用按钮.png","Boomerang_UI/4_0004_图层-3.png","Boomerang_UI/4_0005_获得.png","Boomerang_UI/1_0009_图层-39-拷贝.png","Boomerang_UI/4_0003_-购买.png","Boomerang_UI/4_0007_图层-75-拷贝-3.png","Boomerang_UI/4_0008_图层-1.png","Boomerang_UI/4_0006_图层-2.png","Boomerang_UI/140.png","Boomerang_UI/× 拷贝.png","Boomerang_UI/您的钻石不足 观看视频可直接获得哦.png"],"loadList3D":[]}
+{
+  "type": "View",
+  "props": {
+    "zOrder": 2,
+    "width": 750,
+    "top": 0,
+    "right": 0,
+    "mouseThrough": true,
+    "left": 0,
+    "height": 1334,
+    "bottom": 0
+  },
+  "compId": 2,
+  "child": [
+    {
+      "type": "Box",
+      "props": {
+        "top": 0,
+        "right": 0,
+        "left": 0,
+        "bottom": 0,
+        "bgColor": "#000000",
+        "alpha": 0.7
+      },
+      "compId": 38
+    },
+    {
+      "type": "Box",
+      "props": {
+        "zOrder": 4,
+        "right": 0,
+        "name": "UnlockSkin_View",
+        "mouseThrough": false,
+        "left": 0,
+        "height": 880,
+        "bottom": 273
+      },
+      "compId": 3,
+      "child": [
+        {
+          "type": "Sprite",
+          "props": {
+            "top": 1,
+            "texture": "Boomerang_UI/4_0000_图层-5.png",
+            "right": 0,
+            "name": "Bg",
+            "left": 0,
+            "bottom": -1
+          },
+          "compId": 4
+        },
+        {
+          "type": "Image",
+          "props": {
+            "top": 21,
+            "skin": "Boomerang_UI/4_0002_-×.png",
+            "right": 10,
+            "name": "Close_Btn"
+          },
+          "compId": 5
+        },
+        {
+          "type": "Image",
+          "props": {
+            "width": 300,
+            "visible": false,
+            "skin": "Boomerang_UI/排行榜及邀请好友通用按钮.png",
+            "sizeGrid": "20,30,40,30",
+            "name": "UnlockByVideo_Btn",
+            "left": 225,
+            "height": 130,
+            "bottom": -2
+          },
+          "compId": 7,
+          "child": [
+            {
+              "type": "Sprite",
+              "props": {
+                "y": 27,
+                "x": 47,
+                "texture": "Boomerang_UI/4_0004_图层-3.png"
+              },
+              "compId": 8
+            },
+            {
+              "type": "Sprite",
+              "props": {
+                "y": 30.5,
+                "x": 150,
+                "texture": "Boomerang_UI/4_0005_获得.png"
+              },
+              "compId": 9
+            }
+          ]
+        },
+        {
+          "type": "Image",
+          "props": {
+            "width": 300,
+            "visible": false,
+            "skin": "extraAssets/basebtn.png",
+            "sizeGrid": "20,30,40,30",
+            "name": "UnlockByDia_Btn",
+            "left": 40,
+            "height": 130,
+            "bottom": 10
+          },
+          "compId": 10,
+          "child": [
+            {
+              "type": "Sprite",
+              "props": {
+                "y": 33,
+                "x": 170,
+                "width": 56,
+                "texture": "Boomerang_UI/1_0009_图层-39-拷贝.png",
+                "height": 52
+              },
+              "compId": 11
+            },
+            {
+              "type": "Sprite",
+              "props": {
+                "y": 33,
+                "x": 175,
+                "texture": "Boomerang_UI/4_0003_-购买.png",
+                "visible": "false"
+              },
+              "compId": 12
+            },
+            {
+              "type": "Text",
+              "props": {
+                "y": 35,
+                "x": 65,
+                "width": 103,
+                "valign": "middle",
+                "text": "600",
+                "overflow": "visible",
+                "name": "DiamondCount_Text",
+                "height": 52,
+                "fontSize": 50,
+                "font": "Helvetica",
+                "color": "#ffffff",
+                "bold": true,
+                "align": "center",
+                "runtime": "laya.display.Text"
+              },
+              "compId": 13
+            }
+          ]
+        },
+        {
+          "type": "Image",
+          "props": {
+            "width": 300,
+            "visible": false,
+            "skin": "extraAssets/skinbtn.png",
+            "sizeGrid": "20,30,40,30",
+            "name": "UnlockByDia_Btn1",
+            "left": 410,
+            "height": 130,
+            "bottom": 10
+          },
+          "compId": 10,
+          "child": [
+            {
+              "type": "Sprite",
+              "props": {
+                "y": 33,
+                "x": 180,
+                "width": 56,
+                "texture": "Boomerang_UI/1_0009_图层-39-拷贝.png",
+                "height": 52,
+                "visible": "false"
+              },
+              "compId": 11
+            },
+            {
+              "type": "Sprite",
+              "props": {
+                "y": 33,
+                "x": 175,
+                "texture": "Boomerang_UI/4_0003_-购买.png",
+                "visible": "false"
+              },
+              "compId": 12
+            },
+            {
+              "type": "Text",
+              "props": {
+                "y": 35,
+                "x": 75,
+                "width": 103,
+                "valign": "middle",
+                "text": "600",
+                "overflow": "visible",
+                "name": "DiamondCount_Text",
+                "height": 52,
+                "fontSize": 50,
+                "font": "Helvetica",
+                "strokeColor": "#383838",
+                "stroke": 5,
+                "color": "#ffffff",
+                "bold": true,
+                "align": "center",
+                "runtime": "laya.display.Text",
+                "visible": "false"
+              },
+              "compId": 13
+            }
+          ]
+        },
+        {
+          "type": "Image",
+          "props": {
+            "width": 300,
+            "visible": false,
+            "skin": "Boomerang_UI/排行榜及邀请好友通用按钮.png",
+            "sizeGrid": "20,30,40,30",
+            "name": "UseSkin_Btn",
+            "left": 225,
+            "height": 130,
+            "bottom": -2
+          },
+          "compId": 14,
+          "child": [
+            {
+              "type": "Text",
+              "props": {
+                "y": 0,
+                "x": 0,
+                "width": 300,
+                "valign": "middle",
+                "text": "Use Skin",
+                "overflow": "visible",
+                "name": "lab",
+                "height": 111,
+                "fontSize": 64,
+                "font": "Helvetica",
+                "strokeColor": "#383838",
+                "stroke": 5,
+                "color": "#ffffff",
+                "bold": true,
+                "align": "center",
+                "runtime": "laya.display.Text"
+              },
+              "compId": 15
+            }
+          ]
+        },
+        {
+          "type": "Text",
+          "props": {
+            "y": 760,
+            "x": 0,
+            "width": 750,
+            "valign": "middle",
+            "text": "Select Skin ",
+            "overflow": "visible",
+            "name": "SelectSkin_Text",
+            "height": 111,
+            "strokeColor": "#383838",
+            "stroke": 5,
+            "fontSize": 64,
+            "font": "SimHei",
+            "color": "#ffffff",
+            "bold": true,
+            "align": "center",
+            "runtime": "laya.display.Text"
+          },
+          "compId": 16
+        },
+        {
+          "type": "List",
+          "props": {
+            "y": 430,
+            "x": 375,
+            "width": 650,
+            "visible": true,
+            "spaceY": 30,
+            "spaceX": 30,
+            "repeatY": 3,
+            "repeatX": 3,
+            "pivotY": 310,
+            "pivotX": 325,
+            "name": "List",
+            "height": 600
+          },
+          "compId": 17,
+          "child": [
+            {
+              "type": "Box",
+              "props": {
+                "y": 0,
+                "x": 25,
+                "width": 180,
+                "renderType": "render",
+                "height": 180
+              },
+              "compId": 18,
+              "child": [
+                {
+                  "type": "Sprite",
+                  "props": {
+                    "y": 0,
+                    "x": 0,
+                    "width": 180,
+                    "texture": "Boomerang_UI/4_0007_图层-75-拷贝-3.png",
+                    "name": "Normal",
+                    "mouseEnabled": false,
+                    "height": 180
+                  },
+                  "compId": 19
+                },
+                {
+                  "type": "Sprite",
+                  "props": {
+                    "y": 0,
+                    "x": 0,
+                    "width": 180,
+                    "visible": false,
+                    "texture": "Boomerang_UI/4_0008_图层-1.png",
+                    "name": "Selected",
+                    "mouseEnabled": false,
+                    "height": 180
+                  },
+                  "compId": 20
+                },
+                {
+                  "type": "Sprite",
+                  "props": {
+                    "y": 0,
+                    "x": 0,
+                    "name": "Skin",
+                    "mouseEnabled": false
+                  },
+                  "compId": 21
+                },
+                {
+                  "type": "Sprite",
+                  "props": {
+                    "y": 163,
+                    "x": 166,
+                    "width": 47,
+                    "texture": "Boomerang_UI/4_0006_图层-2.png",
+                    "pivotY": 40,
+                    "pivotX": 31,
+                    "name": "Locked",
+                    "mouseEnabled": false,
+                    "height": 61
+                  },
+                  "compId": 22
+                },
+                {
+                  "type": "Text",
+                  "props": {
+                    "y": 70,
+                    "x": 29.328125,
+                    "visible": false,
+                    "text": "Using",
+                    "strokeColor": "#383838",
+                    "stroke": 3,
+                    "name": "Using",
+                    "mouseEnabled": false,
+                    "fontSize": 40,
+                    "font": "SimHei",
+                    "color": "#ffffff",
+                    "bold": true,
+                    "runtime": "laya.display.Text"
+                  },
+                  "compId": 23
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Image",
+          "props": {
+            "width": 500,
+            "visible": false,
+            "skin": "Boomerang_UI/140.png",
+            "name": "UnlockByVideo_View",
+            "height": 400,
+            "centerY": 0,
+            "centerX": 0
+          },
+          "compId": 25,
+          "child": [
+            {
+              "type": "Image",
+              "props": {
+                "width": 40,
+                "top": 10,
+                "skin": "Boomerang_UI/× 拷贝.png",
+                "right": 10,
+                "pivotY": 20,
+                "pivotX": 20,
+                "name": "Close_Btn",
+                "height": 40
+              },
+              "compId": 26
+            },
+            {
+              "type": "Image",
+              "props": {
+                "width": 379,
+                "top": 69,
+                "skin": "Boomerang_UI/您的钻石不足 观看视频可直接获得哦.png",
+                "pivotY": 63,
+                "pivotX": 190,
+                "height": 107,
+                "centerX": -1
+              },
+              "compId": 27
+            },
+            {
+              "type": "Image",
+              "props": {
+                "width": 300,
+                "visible": true,
+                "skin": "Boomerang_UI/排行榜及邀请好友通用按钮.png",
+                "sizeGrid": "20,30,40,30",
+                "scaleY": 0.7,
+                "scaleX": 0.7,
+                "name": "Unlock_Btn",
+                "height": 130,
+                "centerX": 0,
+                "bottom": 39
+              },
+              "compId": 28,
+              "child": [
+                {
+                  "type": "Sprite",
+                  "props": {
+                    "y": 27,
+                    "x": 47,
+                    "texture": "Boomerang_UI/4_0004_图层-3.png"
+                  },
+                  "compId": 29
+                },
+                {
+                  "type": "Sprite",
+                  "props": {
+                    "y": 30.5,
+                    "x": 150,
+                    "texture": "Boomerang_UI/4_0005_获得.png"
+                  },
+                  "compId": 30
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Script",
+      "props": {
+        "y": 194,
+        "x": 0,
+        "runtime": "script/MyView/UnlockSkinView.ts"
+      },
+      "compId": 24
+    }
+  ],
+  "loadList": [
+    "Boomerang_UI/4_0000_图层-5.png",
+    "Boomerang_UI/4_0001_回旋镖解锁.png",
+    "Boomerang_UI/4_0002_-×.png",
+    "Boomerang_UI/排行榜及邀请好友通用按钮.png",
+    "Boomerang_UI/4_0004_图层-3.png",
+    "Boomerang_UI/4_0005_获得.png",
+    "Boomerang_UI/1_0009_图层-39-拷贝.png",
+    "Boomerang_UI/4_0003_-购买.png",
+    "Boomerang_UI/4_0007_图层-75-拷贝-3.png",
+    "Boomerang_UI/4_0008_图层-1.png",
+    "Boomerang_UI/4_0006_图层-2.png",
+    "Boomerang_UI/140.png",
+    "Boomerang_UI/× 拷贝.png",
+    "Boomerang_UI/您的钻石不足 观看视频可直接获得哦.png"
+  ],
+  "loadList3D": []
+}
